@@ -26,12 +26,12 @@ public class TestSorter {
   /**
    * The sorter we use to sort arrays of strings.
    */
-  Sorter<String> stringSorter;
+  static Sorter<String> stringSorter = null;
 
   /**
    * The sorter we use to sort arrays of integers.
    */
-  Sorter<Integer> intSorter;
+  static Sorter<Integer> intSorter = null;
 
   // +-------+-------------------------------------------------------
   // | Tests |
