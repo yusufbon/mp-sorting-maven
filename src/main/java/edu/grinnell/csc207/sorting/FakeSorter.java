@@ -1,4 +1,4 @@
-package edu.grinnell.csc207.util;
+package edu.grinnell.csc207.sorting;
 
 import java.util.Comparator;
 

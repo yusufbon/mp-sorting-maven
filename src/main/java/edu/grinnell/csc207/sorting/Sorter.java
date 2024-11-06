@@ -1,4 +1,4 @@
-package edu.grinnell.csc207.util;
+package edu.grinnell.csc207.sorting;
 
 /**
  * Things that know how to sort arrays of values.
