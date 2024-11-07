@@ -4,7 +4,6 @@ import java.util.Comparator;
 
 /**
  * Something that sorts using insertion sort.
- * tests fail.
  *
  * @param <T>
  *   The types of values that are sorted.
