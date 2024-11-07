@@ -1,5 +1,7 @@
 package edu.grinnell.csc207.sorting;
 
+import edu.grinnell.csc207.util.ArrayUtils;
+
 import java.util.Comparator;
 
 /**
@@ -54,6 +56,8 @@ public class FakeSorter<T> implements Sorter<T> {
    */
   @Override
   public void sort(T[] values) {
-    // Cross your fingers and hope it's already sorted.
+    // Randomly permute the elements of the list and hope that that
+    // works.
+    ArrayUtils.permute(values);
   } // sort(T[])
 } // class FakeSorter
