@@ -4,6 +4,7 @@ import edu.grinnell.csc207.util.ArrayUtils;
 
 import java.util.Arrays;
 
+
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -17,7 +18,7 @@ import org.junit.jupiter.api.Test;
  * Rather, you should subclass it and initialize stringSorter and
  * intSorter in a static @BeforeAll method.
  *
- * @author Your Name
+ * @author Bonsen Yusuf
  * @uathor Samuel A. Rebelsky
  */
 public class TestSorter {
@@ -120,4 +121,82 @@ public class TestSorter {
     ArrayUtils.permute(original);
     assertSorts(expected, original, intSorter);
   } // permutedIntegers
+
+  /**
+   * Test sorting an array with duplicate elements.
+   */
+  @Test
+  public void duplicateElementsTest() {
+    if (intSorter == null) return;
+    Integer[] original = { 5, 3, 3, 8, 2, 2, 5 };
+    Integer[] expected = { 2, 2, 3, 3, 5, 5, 8 };
+    assertSorts(expected, original, intSorter);
+  } //duplicateElementsTest
+
+  /**
+   * Test sorting an empty array.
+   */
+  @Test
+  public void emptyArrayTest() {
+    if (intSorter == null) return;
+    Integer[] original = {};
+    Integer[] expected = {};
+    assertSorts(expected, original, intSorter);
+  } // emptyArrayTest
+
+  /**
+   * Test sorting a single-element array.
+   */
+  @Test
+  public void singleElementTest() {
+    if (stringSorter == null) return;
+    String[] original = { "echo" };
+    String[] expected = { "echo" };
+    assertSorts(expected, original, stringSorter);
+  } // singleElementTest
+
+
+/**
+   * Test sorting using my algorith, YusufBonsen sorter.
+   */
+  @Test
+  public void testYusufBonsenSorter() {
+    Sorter<Integer> lastFirstSorter = new YusufBonsenSorter<>(Integer::compareTo);
+    Integer[] original = { 10, -5, 3, 7, 2, 0 };
+    Integer[] expected = { -5, 0, 2, 3, 7, 10 };
+    assertSorts(expected, original, lastFirstSorter);
+  } //testYusufBonsenSorter()
+
+  /**
+   * Test sorting an array with negative numbers.
+   */
+  @Test
+  public void testArrayWithNegatives() {
+    if (intSorter == null) return;
+    Integer[] original = { 3, -1, -7, 4, 2 };
+    Integer[] expected = { -7, -1, 2, 3, 4 };
+    assertSorts(expected, original, intSorter);
+  } //testArrayWithNegatives()
+
+  /**
+   * Test sorting an array with extreme integer values.
+   */
+  @Test
+  public void testMinMaxValuesArray() {
+    if (intSorter == null) return;
+    Integer[] original = { Integer.MAX_VALUE, Integer.MIN_VALUE, 0 };
+    Integer[] expected = { Integer.MIN_VALUE, 0, Integer.MAX_VALUE };
+    assertSorts(expected, original, intSorter);
+  } //testMinMaxValuesArray()
+
+  /**
+   * Test sorting an alternating high-low value array.
+   */
+  @Test
+  public void testAlternatingValues() {
+    if (intSorter == null) return;
+    Integer[] original = { 1, 100, 2, 99, 3, 98 };
+    Integer[] expected = { 1, 2, 3, 98, 99, 100 };
+    assertSorts(expected, original, intSorter);
+  } //testAlternatingValues()
 } // class TestSorter
