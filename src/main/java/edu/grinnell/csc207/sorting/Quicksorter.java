@@ -7,7 +7,7 @@ import java.util.Comparator;
  *
  * @param <T>
  *   The types of values that are sorted.
- *
+ * @author Bonsen Yusuf
  * @author Samuel A. Rebelsky
  */
 
